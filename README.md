@@ -8,9 +8,8 @@
 的二次开发分支，**在原版 v1.0.4 基础上适配 ColorOS 17（Android 17 / SDK 37）**，
 并重做了设置界面的主页与配色。
 
-- 包名：`com.github.rove24.assistrestore`
-- 版本：`0.1` (versionCode 1)
-- 适配固件：ColorOS 17 国内版（已在 `PKX110` / `V17.0.0` / `PKX110_17.0.0.100(CN01)` 上验证）
+<img width="8192" height="4444" alt="IMG_20260928_195407" src="https://github.com/user-attachments/assets/5c2592da-ff7f-4694-92ad-b32bea5e46fc" />
+
 
 ---
 
