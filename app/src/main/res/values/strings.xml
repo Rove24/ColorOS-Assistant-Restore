@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ColorOS 唤语</string>
+    <string name="module_description">在 ColorOS 国内版（已适配 ColorOS 17 / Android 17）上还原 AOSP 数字助理行为：长按电源键、长按手势条、屏幕底部角落内滑均唤醒系统当前设置的默认助理应用。</string>
+</resources>

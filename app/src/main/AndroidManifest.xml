@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Android 11+ package visibility: the settings screen lists the assistant apps the
+         system itself offers, so the same two queries ColorOS uses must be visible to us. -->
+    <queries>
+        <intent>
+            <action android:name="android.service.voice.VoiceInteractionService" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.ASSIST" />
+        </intent>
+        <!-- The assistant card jumps into the system picker that ColorOS' own settings row opens;
+             without these the PermissionController activities stay invisible to us. -->
+        <intent>
+            <action android:name="android.intent.action.MANAGE_DEFAULT_APP" />
+        </intent>
+        <intent>
+            <action android:name="android.settings.MANAGE_DEFAULT_APPS_SETTINGS" />
+        </intent>
+        <intent>
+            <action android:name="android.settings.VOICE_INPUT_SETTINGS" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".ui.App"
+        android:allowBackup="false"
+        android:description="@string/module_description"
+        android:hasCode="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round">
+
+        <!-- The launcher entry is an alias so the advanced page can hide the icon, and MainActivity
+             keeps a MAIN + INFO filter instead of the launcher one. That INFO entry is what
+             PackageManager.getLaunchIntentForPackage() resolves when no launcher entry is enabled,
+             so the module can still be opened from LSPosed and from the system app-info page while
+             the icon is hidden. -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssistRestore">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.INFO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".LauncherEntry"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:targetActivity=".ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
+    </application>
+
+</manifest>

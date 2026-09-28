@@ -1,0 +1,21 @@
+# Gradle build output
+.gradle/
+build/
+.kotlin/
+
+# Machine-specific SDK location
+local.properties
+
+# Release signing material — must never be committed
+keystore.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Packaged artifacts
+*.apk
+*.aab
+*.jks
+*.keystore

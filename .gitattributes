@@ -1,0 +1,11 @@
+# Keep the Gradle wrapper executable on Linux runners: a CRLF shebang breaks it.
+* text=auto
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Binary assets
+*.png binary
+*.jar binary
+*.jks binary
+*.keystore binary
